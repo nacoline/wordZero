@@ -342,6 +342,14 @@ func (r *WordRenderer) renderImage(node *ast.Image) (ast.WalkStatus, error) {
 	// 尝试添加图片，如果失败则添加替代文本
 	// 这里需要后续完善图片处理逻辑
 	if alt != "" {
+		r.doc.AddImageFromFile(src, &document.ImageConfig{
+			Position:  document.ImagePositionInline,
+			Alignment: document.AlignCenter,
+			Size: &document.ImageSize{
+				Width:           60,
+				KeepAspectRatio: true,
+			},
+		})
 		r.doc.AddParagraph("[图片: " + alt + "]")
 	} else {
 		r.doc.AddParagraph("[图片: " + src + "]")
