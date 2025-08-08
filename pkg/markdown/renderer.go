@@ -350,9 +350,9 @@ func (r *WordRenderer) renderImage(node *ast.Image) (ast.WalkStatus, error) {
 				KeepAspectRatio: true,
 			},
 		})
-		r.doc.AddParagraph("[图片: " + alt + "]")
+		r.doc.AddParagraph("[图片: 1111" + alt + "]")
 	} else {
-		r.doc.AddParagraph("[图片: " + src + "]")
+		r.doc.AddParagraph("[图片: 2222" + src + "]")
 	}
 
 	return ast.WalkSkipChildren, nil
